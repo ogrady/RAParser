@@ -116,24 +116,33 @@ const RA = {
         RA.BinaryOperation.call(this, left, T.CROSSPRODUCT, right);   
     },
 
-    Join: function(left, right) {
-        RA.BinaryOperation.call(this, left, T.JOIN, right);   
+    _AbstractJoin: function(left, operator, right, predicate) {
+        RA.BinaryOperation.call(this, left, operator, right);   
+        this.predicate = predicate;
     },
 
-    LOJoin: function(left, right) {
-        RA.BinaryOperation.call(this, left, T.LOJOIN, right);   
+    Join: function(left, right, predicate) {
+        RA._AbstractJoin.call(this, left, T.JOIN, right, predicate);   
     },
 
-    ROJoin: function(left, right) {
-        RA.BinaryOperation.call(this, left, T.ROJOIN, right);   
+    LOJoin: function(left, right, predicate) {
+        RA._AbstractJoin.call(this, left, T.LOJOIN, right, predicate);   
     },
 
-    LSJoin: function(left, right) {
-        RA.BinaryOperation.call(this, left, T.LSJOIN, right);   
+    ROJoin: function(left, right, predicate) {
+        RA._AbstractJoin.call(this, left, T.ROJOIN, right, predicate);   
     },
 
-    RSJoin: function(left, right) {
-        RA.BinaryOperation.call(this, left, T.RSJOIN, right);   
+    FOJoin: function(left, right, predicate) {
+        RA._AbstractJoin.call(this, left, T.FOJOIN, right, predicate);   
+    },
+
+    LSJoin: function(left, right, predicate) {
+        RA._AbstractJoin.call(this, left, T.LSJOIN, right), predicate;   
+    },
+
+    RSJoin: function(left, right, predicate) {
+        RA._AbstractJoin.call(this, left, T.RSJOIN, right, predicate);   
     },
 
     And: function(left, right) {

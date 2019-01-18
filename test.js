@@ -7,7 +7,13 @@ var input = [
     "σ{x=41+1}(A)",
     "π{[a,b]}(A)",
     "ρ{[x→a,y→b]}(A)",
-    "[42,41+1,x=y]"
+    "[42,41+1,x=y]",
+    "A⋈{A.x=B.y}B",
+    "A⟕{A.x=B.y}B",
+    "A⟖{A.x=B.y}B",
+    "A⟗{A.x=B.y}B",
+    "A⋉{A.x=B.y}B",
+    "A⋊{A.x=B.y}B",
 ];
 
 input.forEach((e) => {
