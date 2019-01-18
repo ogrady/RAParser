@@ -1,11 +1,21 @@
 # Purpose
 This package contains a [Nearley](https://nearley.js.org)-grammar for a **R**elational **A**lgebra. The grammar tries to stay as close to [how you would denote an expression in RA](https://en.wikipedia.org/wiki/Relational_algebra) on the blackboard as possible by utilising appropriate unicode symbols.
 
-## Compiling the Grammar
+# Compiling the Grammar
 Utilise the nearley-compiler to create a parser from the `ra.ne` grammar file. From within the project root:
 `./node_modules/nearley/bin/nearleyc.js ra.ne > ra.js`
 
 You can then include the parser and utilise it as needed. See `test.js` for sample usage. 
+
+# Sample Input
+Just some input strings to give you a feeling for how expressions in this RA look like.
+The `ra.ne` serves as "full documentation" of expressions in this grammar.
+
+- `A ∩ B`: intersection of A and B.
+- `A - B`: A without B.
+- `σ{x=41+1}(A)`: Applying the predicate `x=41+1` to all tuples in `A`.
+- `π{[a,b]}(A)`: Selecting only the fields `a` and `b` from the relation `A`.
+- `ρ{[x→a,y→b]}(A)`: Renaming the fields `x` and `y` in `A` to `a` and `b` respectively.
 
 # Notes to Myself
 ## Programmatic Interface (if should ever need)
