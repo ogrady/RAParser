@@ -1,16 +1,29 @@
 {
-  "name": "raparser",
+  "name": "@ogradyd/raparser",
   "version": "1.0.0",
-  "description": "",
+  "description": "This package contains a [Nearley](https://nearley.js.org)-grammar for a **R**elational **A**lgebra. The grammar tries to stay as close to [how you would denote an expression in RA](https://en.wikipedia.org/wiki/Relational_algebra) on the blackboard as possible by utilising appropriate unicode symbols.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Daniel O'Grady",
   "license": "ISC",
   "dependencies": {
     "nearley": "^2.16.0",
     "npm": "^6.5.0",
     "react": "^0.14.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ogrady/RAParser.git"
+  },
+  "keywords": [
+    "relational-algebra",
+    "parser"
+  ],
+  "bugs": {
+    "url": "https://github.com/ogrady/RAParser/issues"
+  },
+  "homepage": "https://github.com/ogrady/RAParser#readme"
 }
