@@ -161,7 +161,7 @@ var grammar = {
     {"name": "Cond", "symbols": [{"literal":"{"}, "Expression", {"literal":"}"}], "postprocess": ([_1,ex,_2]) => ex},
     {"name": "Target", "symbols": [{"literal":"("}, "Expression", {"literal":")"}], "postprocess": ([_1,ex,_2]) => ex},
     {"name": "Attr", "symbols": ["Ident", {"literal":"."}, "Ident"], "postprocess": ([rel, _, attr]) => new RA.Attribute(rel, attr)},
-    {"name": "Alias", "symbols": ["Ident", {"literal":"→"}, "Ident"], "postprocess": ([oname, _, nname]) => { return {oname: oname, nname: nname} }},
+    {"name": "Alias", "symbols": ["Ident", {"literal":"→"}, "Ident"], "postprocess": ([oname, _, nname]) => new RA.Alias(oname, nname)},
     {"name": "List$subexpression$1", "symbols": [{"literal":"["}, "_", {"literal":"]"}]},
     {"name": "List", "symbols": ["List$subexpression$1"], "postprocess": (_) => []},
     {"name": "List$subexpression$2$ebnf$1", "symbols": []},

@@ -37,6 +37,7 @@ var T = {
     DIVIDED_BY : "/",
     PERIOD : ".",
     UNDERSCORE : "_",
+    ARROW_RIGHT: "→"
 };
 
 function ASTNode() {
@@ -52,6 +53,7 @@ const RA = {
     },
 
     Terminal: function(value) {
+        RA.Expression.call(this);
         this.value = value;   
     },
 
@@ -96,9 +98,14 @@ const RA = {
         RA.BinaryOperation.call(this, expression, T.SELECT, relation);
     },
 
+    // Rename is a whole list of Aliases applied to a relation
     Rename: function(expression, relation) {
         RA.BinaryOperation.call(this, expression, T.RENAME, relation);
     },
+
+    Alias: function(oldname, newname) {
+        RA.BinaryOperation.call(this, oldname, T.ARROW_RIGHT, newname);
+    }
 
     Union: function(left, right) {
         RA.BinaryOperation.call(this, left, T.UNION, right);   

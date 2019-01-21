@@ -81,7 +81,7 @@ Not -> "¬" Expression
 Cond   -> "{" Expression "}" {% ([_1,ex,_2]) => ex %}
 Target -> "(" Expression ")" {% ([_1,ex,_2]) => ex %}
 Attr   -> Ident "." Ident    {% ([rel, _, attr]) => new RA.Attribute(rel, attr) %}
-Alias  -> Ident "→" Ident    {% ([oname, _, nname]) => { return {oname: oname, nname: nname} }%} 
+Alias  -> Ident "→" Ident    {% ([oname, _, nname]) => new RA.Alias(oname, nname) %} 
 List   -> ("[" _ "]")        {% (_) => [] %}
         | ("[" Expression ("," Expression):* "]") {% ([toks]) => {
                 // remove brackets  
