@@ -145,7 +145,7 @@ const RA = {
     },
 
     LSJoin: function(left, right, predicate) {
-        RA._AbstractJoin.call(this, left, T.LSJOIN, right), predicate;   
+        RA._AbstractJoin.call(this, left, T.LSJOIN, right, predicate);   
     },
 
     RSJoin: function(left, right, predicate) {
