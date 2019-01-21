@@ -4,9 +4,16 @@ This package contains a [Nearley](https://nearley.js.org)-grammar for a **R**ela
 # Compiling the Grammar
 The package comes with a compiled grammar located in `ra.js`.
 Utilise the nearley-compiler to create a parser from the `ra.ne` grammar file yourself, if need be. From within the project root:
-`./node_modules/nearley/bin/nearleyc.js ra.ne > ra.js`
 
-You can then include the parser and utilise it as needed. See `test.js` for sample usage. 
+```shell
+./node_modules/nearley/bin/nearleyc.js ra.ne > ra.js
+```
+
+You can then include the parser and utilise it as needed. The module features the following properties:
+
+- `grammar`: the raw grammar,
+- `compiledGrammar`: the grammar compiled using nearley,
+- `createParser()`: a function which creates a [new nearley parser](https://nearley.js.org/docs/parser) from the compiled grammar.
 
 # Sample Input
 Just some input strings to give you a feeling for how expressions in this RA look like.
@@ -19,5 +26,4 @@ The `ra.ne` serves as "full documentation" of expressions in this grammar.
 - `ρ{[x→a,y→b]}(A)`: Renaming the fields `x` and `y` in `A` to `a` and `b` respectively.
 
 # Notes to Myself
-## Programmatic Interface (if should ever need)
-https://www.npmjs.com/package/nearley-there
+Programmatic Interface (if should ever need): https://www.npmjs.com/package/nearley-there
