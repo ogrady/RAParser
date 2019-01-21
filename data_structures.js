@@ -105,7 +105,7 @@ const RA = {
 
     Alias: function(oldname, newname) {
         RA.BinaryOperation.call(this, oldname, T.ARROW_RIGHT, newname);
-    }
+    },
 
     Union: function(left, right) {
         RA.BinaryOperation.call(this, left, T.UNION, right);   
