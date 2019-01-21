@@ -75,11 +75,11 @@ const RA = {
         RA.Terminal.call(this, value);
     },
 
-    Attribute: function(parent, child) {
+    /*Attribute: function(parent, child) {
         RA.Expression.call(this);
         this.parent = parent;
         this.child = child;
-    },
+    },*/
 
     BinaryOperation: function(left, op, right) {
         RA.Expression.call(this);
@@ -149,7 +149,7 @@ const RA = {
         RA.BinaryOperation.call(this, left, T.AND, right);   
     },
 
-    And: function(left, right) {
+    Or: function(left, right) {
         RA.BinaryOperation.call(this, left, T.OR, right);   
     },
 
@@ -177,7 +177,7 @@ const RA = {
         RA.BinaryOperation.call(this, left, T.DIVIDED_BY, right);   
     },
 
-    Period: function(left, right) {
+    Attribute: function(left, right) {
         RA.BinaryOperation.call(this, left, T.PERIOD, right);   
     }
 };
